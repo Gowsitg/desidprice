@@ -1,0 +1,26 @@
+<div id="login" class="commonScss" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+     <div fxLayout="row" fxFlex="90%" style="width:100%" fxLayoutAlign="center center">
+            <div fxFlex="96" fxFlex.gt-sm="40" fxLayout="column">
+               <form #form="ngForm" [formGroup]="loginform" fxLayout="column">
+                  <mat-form-field fxFlex="100" appearance="outline">
+                     <mat-label>User Name/Email ID/Phone Number</mat-label>
+                     <input matInput formControlName="username" required>
+                     <mat-error *ngIf="form.submitted || fform['username'].errors?.['required']">Enter User Name/Email ID/Phone Number</mat-error>
+                  </mat-form-field>
+                  <mat-form-field fxFlex="100" appearance="outline">
+                     <mat-label>Password</mat-label>
+                     <input matInput formControlName="password" required [type]="!hidebtn?'password':'text'">
+                      <span matSuffix (click)="hidebtn = !hidebtn">0</span>
+                     <mat-error *ngIf="form.submitted || fform['password'].errors?.['required']">Enter Password</mat-error>
+                  </mat-form-field>
+                  <span fxFlex="100" fxLayoutAlign="end start">Forget Password</span>
+                  <mat-error fxFlex="100" *ngIf="getValues" fxLayoutAlign="start start">Incorrect Username and Password</mat-error>
+
+                  <button mat-raised-button type="submit" (click)="submitForm()"><span *ngIf="!loader">Login</span><mat-spinner *ngIf="loader" color="primary" [diameter]="20"></mat-spinner></button>
+               </form> 
+            </div>
+     </div>
+     <div fxLayout="row" fxFlex="10%">
+         <p>Don't have account? <span (click)="signupaccount()">Sign Up</span></p>
+     </div> 
+</div>
