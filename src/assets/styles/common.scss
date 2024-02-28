@@ -38,3 +38,40 @@ $desid-price-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
  
+$basefont: 16;
+$max: 50;
+$offset: 1;
+$unit: "rem";
+
+@mixin list-loop($className, $styleName) {
+ $i: 0;
+
+ @while $i <=$max {
+   #{$className + $i} {
+     #{$styleName}: #{($i) / ($basefont) + $unit} !important;
+   }
+
+   $i: $i + $offset;
+ }
+}
+
+@include list-loop(".fs-", "font-size");
+@include list-loop(".lh-", "line-height");
+@include list-loop(".ht-", "height");
+@include list-loop(".wh-", "width");
+@include list-loop(".p-t-", "padding-top");
+@include list-loop(".p-b-", "padding-bottom");
+@include list-loop(".m-t-", "margin-top");
+@include list-loop(".m-b-", "margin-bottom");
+@include list-loop(".pd-", "padding");
+@include list-loop(".m-", "margin");
+
+.cr-pointer {
+  cursor: pointer;
+}
+
+.mat-mdc-raised-button {
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: none;
+}
