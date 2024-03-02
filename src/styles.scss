@@ -38,7 +38,6 @@ $desid-price-theme: mat.define-light-theme((
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import 'assets/styles/common.scss';
-@import 'assets/styles/tabler.scss';
 @import 'assets/styles/googleicons.scss';
 @import 'assets/styles/form.scss';
-@import 'assets/styles/colors.scss';
+@import 'assets/styles/style.scss'

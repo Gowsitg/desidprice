@@ -13,6 +13,7 @@ import { JwtInterceptor, fakeBackendProvider } from './shared/authguard';
 import { LoginModule } from './module/login/login.module';
 import { ModuleModule } from './module/module.module';
 import { MaterialModule } from './material-modules';
+import { MenuItems } from './shared/side-menu/side-menu.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +24,13 @@ import { MaterialModule } from './material-modules';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ModuleModule,
+    // ModuleModule,
     MaterialModule
   ],
   exports: [
   ],
   providers: [
+    MenuItems,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,

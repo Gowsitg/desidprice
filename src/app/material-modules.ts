@@ -42,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   exports: [
@@ -89,7 +90,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ScrollingModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule
   ]
 })
 export class MaterialModule {}

@@ -1,6 +1,6 @@
 <div id="register" class="commonScss" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
     <div fxLayout="row" fxFlex="90%" style="width:100%" fxLayoutAlign="center center">
-           <div fxFlex="96" fxFlex.gt-sm="40" fxLayout="column">
+           <div fxFlex="96" fxFlex.gt-xs="06" fxFlex.gt-sm="40" fxLayout="column">
             <h4 class="p-b-10 m-0 fs-20 text-dark">Welcome to Desid</h4>
               <form #form="ngForm" [formGroup]="registerForm" fxLayout="column" fxLayoutGap="17px">
                  <mat-form-field fxFlex="100" appearance="outline">
@@ -13,11 +13,11 @@
                     <input matInput formControlName="mobil" required >
                     <mat-error *ngIf="form.submitted || f['mobil'].errors?.['required']">Enter Mobil Number</mat-error>
                  </mat-form-field>
-                 <button mat-raised-button type="submit" class="bg-primary ht-44" (click)="submitForm()"><span *ngIf="!loader">Submit</span><mat-spinner *ngIf="loader" color="primary" [diameter]="25"></mat-spinner></button>
+                 <button mat-raised-button type="submit" color="primary" class="fs-16 ht-44" (click)="submitForm()"><span *ngIf="!loader">Submit</span><mat-spinner *ngIf="loader" color="primary" [diameter]="25"></mat-spinner></button>
               </form> 
            </div>
     </div>
     <div fxLayout="row" fxFlex="10%">
-        <p class="text-dark fs-15">Already have on account? <span (click)="loginaccount()" class="cr-pointer fs-15 text-accent">Login in</span></p>
+        <p class="text-dark fs-15">Already have on account? <span (click)="loginaccount()" class="cr-pointer fs-15 text-info">Login in</span></p>
     </div> 
 </div>
