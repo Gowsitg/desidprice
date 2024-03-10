@@ -4,7 +4,8 @@ import { LayoutComponent } from './module/layout/layout.component';
 
 const routes: Routes = [
   { path: 'admin',loadChildren: () => import('./module/login/login.module').then(m => m.LoginModule),},
-  { path: 'new',loadChildren: () => import('./module/register/register.module').then(m => m.RegisterModule),}
+  { path: 'new',loadChildren: () => import('./module/register/register.module').then(m => m.RegisterModule),},
+  { path: 'dashboard',component: LayoutComponent, loadChildren: () => import('./module/dashboard/dashboard.module').then(m => m.DashboardModule),}
 ];
 
 @NgModule({

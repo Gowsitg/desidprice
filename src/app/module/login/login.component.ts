@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit{
       this.authservice.login(this.fform['username'].value, this.fform['password'].value).subscribe(res =>  {
         console.log(res);
         this.loader = false;
+        this.router.navigate(['/dashboard/admin'])
       },
       error => {
          this.getValues= true;
